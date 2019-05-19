@@ -1,33 +1,36 @@
 package com.example.weather;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
-public class MainActivity extends BaseActivity {
-    private Button btnGetWeather;
+import java.util.Random;
+
+public class GetWeather extends BaseActivity {
+    private Button clickWeather;
+    private int gradus;
     private final String TAG = this.getClass().getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        showMessage(getString(R.string.str_toast_create));
-        Log.i(TAG, getString(R.string.str_toast_create));
+        setContentView(R.layout.activity_weather);
+        showMessage(getString(R.string.str_toast_create_get_weather));
 
-        btnGetWeather = findViewById(R.id.btn_get_weather);
-        btnGetWeather.setOnClickListener(new View.OnClickListener() {
-            Intent startNewIntentWeather = new Intent(MainActivity.this, GetWeather.class);
-
+        clickWeather = findViewById(R.id.button);
+        clickWeather.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(startNewIntentWeather);
+                Random rand = new Random();
+                TextView textView = findViewById(R.id.weatherView);
+                gradus = rand.nextInt(30);
+                textView.setText(gradus + " " + getString(R.string.circle) + getString(R.string.str_degree));
+                // Как в этом случае использовать строку ресурсов с заполнителями?
             }
         });
     }
-
 
     @Override
     protected void onResume() {

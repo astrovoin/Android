@@ -1,5 +1,23 @@
 <resources>
-    <string name="app_name">Weather</string>
+    <string name="app_name">WeatherApp</string>
+
     <string name="str_name">This is the Weather!</string>
+    <string name="str_press">PRESS!</string>
+
+    <string name="str_btm_weather">Get Weather Now</string>
+    <string name="str_btm_generate_weather">Generate weather</string>
+
+    <string name="str_toast_create">onCreate()</string>
+    <string name="str_toast_create_get_weather">onCreate()</string>
+    <string name="str_toast_resume">"onResume()"</string>
+    <string name="str_toast_start">onStart()</string>
+    <string name="str_toast_restart">onRestart()</string>
+    <string name="str_toast_pause">onPause()</string>
+    <string name="str_toast_back_pressed">onBackPressed()</string>
+    <string name="str_toast_destroy">onDestroy()</string>
+    <string name="str_degree">C</string>
+
+    <string name="circle">&#176;</string>
+
 
 </resources>
