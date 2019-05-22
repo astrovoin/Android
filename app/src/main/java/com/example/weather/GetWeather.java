@@ -2,14 +2,13 @@ package com.example.weather;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.Random;
 
+import static android.provider.Telephony.Mms.Part.TEXT;
+
 public class GetWeather extends BaseActivity {
-    private Button clickWeather;
     private int gradus;
     private final String TAG = this.getClass().getSimpleName();
 
@@ -19,17 +18,32 @@ public class GetWeather extends BaseActivity {
         setContentView(R.layout.activity_weather);
         showMessage(getString(R.string.str_toast_create_get_weather));
 
-        clickWeather = findViewById(R.id.button);
-        clickWeather.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Random rand = new Random();
-                TextView textView = findViewById(R.id.weatherView);
-                gradus = rand.nextInt(30);
-                textView.setText(gradus + " " + getString(R.string.circle) + getString(R.string.str_degree));
-                // Как в этом случае использовать строку ресурсов с заполнителями?
-            }
-        });
+        Random rand = new Random();
+        String text = getIntent().getExtras().getString(TEXT);
+        String strrain = getIntent().getExtras().getString(getString(R.string.set_rain));
+        String strfog = getIntent().getExtras().getString(getString(R.string.set_fog));
+        String strwind = getIntent().getExtras().getString(getString(R.string.set_wind));
+        String strswchsuncloud = getIntent().getExtras().getString(getString(R.string.set_switch_sun));
+
+        TextView city = findViewById(R.id.city);
+        TextView rine = findViewById(R.id.rain);
+        TextView fog = findViewById(R.id.fog);
+        TextView wind = findViewById(R.id.wind);
+        TextView suncloud = findViewById(R.id.sun_cloud);
+        TextView degree = findViewById(R.id.weatherView);
+
+        city.setText(text);
+        rine.setText(strrain);
+        fog.setText(strfog);
+        wind.setText(strwind);
+        suncloud.setText(strswchsuncloud);
+
+
+        gradus = rand.nextInt(30);
+        String endview = gradus + " " + getString(R.string.circle) + getString(R.string.str_degree);
+        degree.setText(endview);
+
+
     }
 
     @Override
