@@ -1,46 +1,55 @@
 package com.example.weather;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TextView;
-
 import java.util.Random;
-
-import static android.provider.Telephony.Mms.Part.TEXT;
 
 public class GetWeather extends BaseActivity {
     private int gradus;
     private final String TAG = this.getClass().getSimpleName();
 
+    private String text;
+    private String str_rain;
+    private String str_fog;
+    private String str_wind;
+    private String str_switch;
+    private String endview;
+
+    private TextView city;
+    private TextView rain;
+    private TextView fog;
+    private TextView wind;
+    private TextView suncloud;
+    private TextView degree;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
-        showMessage(getString(R.string.str_toast_create_get_weather));
+        showMessage(TAG, getString(R.string.str_toast_create_get_weather));
 
         Random rand = new Random();
-        String text = getIntent().getExtras().getString(TEXT);
-        String strrain = getIntent().getExtras().getString(getString(R.string.set_rain));
-        String strfog = getIntent().getExtras().getString(getString(R.string.set_fog));
-        String strwind = getIntent().getExtras().getString(getString(R.string.set_wind));
-        String strswchsuncloud = getIntent().getExtras().getString(getString(R.string.set_switch_sun));
+        text = getIntent().getExtras().getString(getString(R.string.str_message_not_null));
+        str_rain = getIntent().getExtras().getString(getString(R.string.set_rain));
+        str_fog = getIntent().getExtras().getString(getString(R.string.set_fog));
+        str_wind = getIntent().getExtras().getString(getString(R.string.set_wind));
+        str_switch = getIntent().getExtras().getString(getString(R.string.set_switch));
 
-        TextView city = findViewById(R.id.city);
-        TextView rine = findViewById(R.id.rain);
-        TextView fog = findViewById(R.id.fog);
-        TextView wind = findViewById(R.id.wind);
-        TextView suncloud = findViewById(R.id.sun_cloud);
-        TextView degree = findViewById(R.id.weatherView);
+        city = findViewById(R.id.city);
+        rain = findViewById(R.id.rain);
+        fog = findViewById(R.id.fog);
+        wind = findViewById(R.id.wind);
+        suncloud = findViewById(R.id.sun_cloud);
+        degree = findViewById(R.id.weatherView);
 
         city.setText(text);
-        rine.setText(strrain);
-        fog.setText(strfog);
-        wind.setText(strwind);
-        suncloud.setText(strswchsuncloud);
-
+        rain.setText(str_rain);
+        fog.setText(str_fog);
+        wind.setText(str_wind);
+        suncloud.setText(str_switch);
 
         gradus = rand.nextInt(30);
-        String endview = gradus + " " + getString(R.string.circle) + getString(R.string.str_degree);
+        endview = gradus + " " + getString(R.string.circle) + getString(R.string.str_degree);
         degree.setText(endview);
 
 
@@ -49,42 +58,36 @@ public class GetWeather extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        showMessage(getString(R.string.str_toast_resume));
-        Log.i(TAG, getString(R.string.str_toast_resume));
+        showMessage(TAG, getString(R.string.str_toast_resume));
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        showMessage(getString(R.string.str_toast_start));
-        Log.i(TAG, getString(R.string.str_toast_start));
+        showMessage(TAG, getString(R.string.str_toast_start));
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        showMessage(getString(R.string.str_toast_restart));
-        Log.i(TAG, getString(R.string.str_toast_restart));
+        showMessage(TAG, getString(R.string.str_toast_restart));
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        showMessage(getString(R.string.str_toast_pause));
-        Log.i(TAG, getString(R.string.str_toast_pause));
+        showMessage(TAG, getString(R.string.str_toast_pause));
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        showMessage(getString(R.string.str_toast_destroy));
-        Log.i(TAG, getString(R.string.str_toast_destroy));
+        showMessage(TAG, getString(R.string.str_toast_destroy));
     }
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        showMessage(getString(R.string.str_toast_back_pressed));
-        Log.i(TAG, getString(R.string.str_toast_back_pressed));
+        showMessage(TAG, getString(R.string.str_toast_back_pressed));
     }
 }
