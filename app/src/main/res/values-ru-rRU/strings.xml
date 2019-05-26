@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Погода</string>
+
+    <string name="str_name">Установи погоду!</string>
+
+    <string name="str_btm_weather">Получить прогноз</string>
+    <string name="str_btm_generate_weather">Генерация погоды</string>
+    <string name="str_message_not_null">Введите город!</string>
+
+    <string name="str_toast_create">onCreate()</string>
+    <string name="str_toast_create_get_weather">onCreate()</string>
+    <string name="str_toast_resume">"onResume()"</string>
+    <string name="str_toast_start">onStart()</string>
+    <string name="str_toast_restart">onRestart()</string>
+    <string name="str_toast_pause">onPause()</string>
+    <string name="str_toast_back_pressed">onBackPressed()</string>
+    <string name="str_toast_destroy">onDestroy()</string>
+    <string name="str_degree">C</string>
+
+    <string name="circle">&#176;</string>
+
+    <string name="set_switch">Солнечно / Облачно</string>
+    <string name="set_switch_sun">Солнечно</string>
+    <string name="set_switch_cloud">Облачно</string>
+    <string name="set_rain">Дождь</string>
+    <string name="set_wind">Ветер</string>
+    <string name="set_fog">Туман</string>
+</resources>
