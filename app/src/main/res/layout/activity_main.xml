@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView_set_the_weather"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -37,7 +37,7 @@
         app:layout_constraintBottom_toTopOf="@id/btn_get_weather"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView2"
+        app:layout_constraintTop_toBottomOf="@id/textView_set_the_weather"
         app:layout_constraintVertical_bias="1.0" />
 
     <LinearLayout
@@ -48,10 +48,9 @@
         app:layout_constraintBottom_toTopOf="@id/editText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView2">
+        app:layout_constraintTop_toBottomOf="@id/textView_set_the_weather">
 
         <LinearLayout
-            android:id="@+id/linearLayoutCheckBox"
             android:layout_width="@dimen/width_linearLayoutCheckBox"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -77,16 +76,16 @@
         </LinearLayout>
 
         <Switch
-            android:id="@+id/switch1"
+            android:id="@+id/switch_sun_cloud"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/set_switch" />
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="670dp"
-        android:layout_height="355dp"
+        android:id="@+id/imageView_main_activity"
+        android:layout_width="@dimen/width_imageview_main_activity"
+        android:layout_height="@dimen/height_imageview_main_activity"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

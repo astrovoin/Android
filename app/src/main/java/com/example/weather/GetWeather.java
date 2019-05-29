@@ -2,7 +2,10 @@ package com.example.weather;
 
 import android.os.Bundle;
 import android.widget.TextView;
+
 import java.util.Random;
+
+import static java.lang.String.valueOf;
 
 public class GetWeather extends BaseActivity {
     private int gradus;
@@ -13,7 +16,6 @@ public class GetWeather extends BaseActivity {
     private String str_fog;
     private String str_wind;
     private String str_switch;
-    private String endview;
 
     private TextView city;
     private TextView rain;
@@ -27,6 +29,10 @@ public class GetWeather extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
         showMessage(TAG, getString(R.string.str_toast_create_get_weather));
+
+        if (getIntent().getExtras() == null) {
+            return;
+        }
 
         Random rand = new Random();
         text = getIntent().getExtras().getString(getString(R.string.str_message_not_null));
@@ -49,7 +55,8 @@ public class GetWeather extends BaseActivity {
         suncloud.setText(str_switch);
 
         gradus = rand.nextInt(30);
-        endview = gradus + " " + getString(R.string.circle) + getString(R.string.str_degree);
+        StringBuilder endview = new StringBuilder(gradus + " ");
+        endview.append(getString(R.string.circle)).append(getString(R.string.str_degree));
         degree.setText(endview);
 
 

@@ -2,6 +2,8 @@ package com.example.weather;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -9,14 +11,18 @@ import android.widget.EditText;
 import android.widget.Switch;
 
 public class MainActivity extends BaseActivity {
-    private Button btnGetWeather;
-    private CheckBox rain;
-    private CheckBox fog;
-    private CheckBox wind;
-    private Switch swch;
     private final String TAG = this.getClass().getSimpleName();
 
-    private String in_txt;
+    private Button btnGetWeather;
+    private CheckBox isRain;
+    private CheckBox isFog;
+    private CheckBox isWind;
+    private Switch switchSunCloud;
+
+    private String inputText;
+
+    private int countSymbol;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +31,30 @@ public class MainActivity extends BaseActivity {
         showMessage(TAG, getString(R.string.str_toast_create));
 
         btnGetWeather = findViewById(R.id.btn_get_weather);
-        rain = findViewById(R.id.checkBoxRain);
-        fog = findViewById(R.id.checkBoxFog);
-        wind = findViewById(R.id.checkBoxWind);
-        swch = findViewById(R.id.switch1);
+        isRain = findViewById(R.id.checkBoxRain);
+        isFog = findViewById(R.id.checkBoxFog);
+        isWind = findViewById(R.id.checkBoxWind);
+        switchSunCloud = findViewById(R.id.switch_sun_cloud);
+
+
+        EditText txt = findViewById(R.id.editText);
+        countSymbol = getResources().getInteger(R.integer.count_symbol);
+        txt.addTextChangedListener(new TextWatcher() {
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                if (s.length() > countSymbol) {
+                    showToast(getString(R.string.str_toast_more_symbol));
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable arg0) {
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+        });
 
         btnGetWeather.setOnClickListener(new View.OnClickListener() {
 
@@ -37,19 +63,19 @@ public class MainActivity extends BaseActivity {
                 Intent startNewIntentWeather = new Intent(MainActivity.this, GetWeather.class);
                 EditText txt = findViewById(R.id.editText);
 
-                in_txt = txt.getText().toString();
 
-                if (!in_txt.equals("")) {
-                    if (rain.isChecked()) {
+                inputText = txt.getText().toString();
+                if (!inputText.equals("")) {
+                    if (isRain.isChecked()) {
                         startNewIntentWeather.putExtra(getString(R.string.set_rain), getString(R.string.set_rain));
                     }
-                    if (fog.isChecked()) {
+                    if (isFog.isChecked()) {
                         startNewIntentWeather.putExtra(getString(R.string.set_fog), getString(R.string.set_fog));
                     }
-                    if (wind.isChecked()) {
+                    if (isWind.isChecked()) {
                         startNewIntentWeather.putExtra(getString(R.string.set_wind), getString(R.string.set_wind));
                     }
-                    if (swch.isChecked()) {
+                    if (switchSunCloud.isChecked()) {
                         startNewIntentWeather.putExtra(getString(R.string.set_switch), getString(R.string.set_switch_cloud));
                     } else {
                         startNewIntentWeather.putExtra(getString(R.string.set_switch), getString(R.string.set_switch_sun));

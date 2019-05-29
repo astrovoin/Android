@@ -16,6 +16,7 @@
     <string name="str_toast_pause">onPause()</string>
     <string name="str_toast_back_pressed">onBackPressed()</string>
     <string name="str_toast_destroy">onDestroy()</string>
+    <string name="str_toast_more_symbol">Много символов!</string>
     <string name="str_degree">C</string>
 
     <string name="circle">&#176;</string>

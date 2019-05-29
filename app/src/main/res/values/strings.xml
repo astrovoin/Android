@@ -15,6 +15,7 @@
     <string name="str_toast_pause">onPause()</string>
     <string name="str_toast_back_pressed">onBackPressed()</string>
     <string name="str_toast_destroy">onDestroy()</string>
+    <string name="str_toast_more_symbol">A lot of symbols!</string>
     <string name="str_degree">C</string>
 
     <string name="circle">&#176;</string>
@@ -25,6 +26,8 @@
     <string name="set_rain">Rain</string>
     <string name="set_wind">Wind</string>
     <string name="set_fog">Fog</string>
+
+
 
 
 </resources>
