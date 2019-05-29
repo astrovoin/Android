@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_size">25sp</dimen>
+    <dimen name="text_size_weather">50sp</dimen>
+    <dimen name="height_checkbox">40dp</dimen>
+    <dimen name="height_checkbox_weather_activity">60dp</dimen>
+    <dimen name="width_linearLayoutCheckBox">130dp</dimen>
+    <dimen name="width_linearLayout">300dp</dimen>
+    <dimen name="height_linearLayout">120dp</dimen>
+
+    <dimen name="height_imageview_main_activity">355dp</dimen>
+    <dimen name="width_imageview_main_activity">670dp</dimen>
+
+    <dimen name="width_linearlt_weather_activity">400dp</dimen>
+    <dimen name="height_linearlt_weather_activity">180dp</dimen>
+
+</resources>

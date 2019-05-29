@@ -1,23 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView_set_the_weather"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="@string/str_name"
-        android:textColor="@color/colorPrimaryDark"
-        android:background="@color/colorAccent"
-        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.04" />
+
+    <Button
+        android:id="@+id/btn_get_weather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_btm_weather"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        app:layout_constraintBottom_toTopOf="@id/btn_get_weather"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_set_the_weather"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="@dimen/width_linearLayout"
+        android:layout_height="@dimen/height_linearLayout"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/editText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_set_the_weather">
+
+        <LinearLayout
+            android:layout_width="@dimen/width_linearLayoutCheckBox"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/checkBoxRain"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_checkbox"
+                android:text="@string/set_rain" />
+
+            <CheckBox
+                android:id="@+id/checkBoxFog"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_checkbox"
+                android:text="@string/set_fog" />
+
+            <CheckBox
+                android:id="@+id/checkBoxWind"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_checkbox"
+                android:text="@string/set_wind" />
+
+        </LinearLayout>
+
+        <Switch
+            android:id="@+id/switch_sun_cloud"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/set_switch" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView_main_activity"
+        android:layout_width="@dimen/width_imageview_main_activity"
+        android:layout_height="@dimen/height_imageview_main_activity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_get_weather"
+        app:srcCompat="@drawable/river" />
+
 
 </android.support.constraint.ConstraintLayout>
