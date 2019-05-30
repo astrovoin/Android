@@ -17,7 +17,7 @@
         app:layout_constraintVertical_bias="0.4" />
 
     <TextView
-        android:id="@+id/city"
+        android:id="@+id/tv_chosen_city"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -35,7 +35,7 @@
         app:layout_constraintBottom_toTopOf="@id/weatherView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/city" />
+        app:layout_constraintTop_toBottomOf="@id/tv_chosen_city" />
 
     <LinearLayout
         android:layout_width="@dimen/width_linearlt_weather_activity"

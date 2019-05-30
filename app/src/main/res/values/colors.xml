@@ -5,5 +5,7 @@
     <color name="colorAccent">#FAFAFA</color>
     <color name="colorBackground">#FF0099CC</color>
     <color name="colorText">#FFFFFF</color>
+    <color name="colorBackgroundFragment">#00FFFFFF</color>
+    <color name="colorBackgroundTvCity">#70FFFFFF</color>
 
 </resources>

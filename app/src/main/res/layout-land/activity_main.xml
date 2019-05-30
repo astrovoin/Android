@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="4dp"
+        android:ems="10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkBoxFog" />
+
+    <Button
+        android:id="@+id/btn_get_weather"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="3dp"
+        android:text="@string/str_btm_weather"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toStartOf="@id/placeholder_coat_of_arms"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editText" />
+
+    <fragment
+        android:id="@+id/choose_city"
+        android:name="com.example.weather.CitiesListFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/placeholder_coat_of_arms"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_get_weather"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <FrameLayout
+        android:id="@+id/placeholder_coat_of_arms"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/editText"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
+
+    <CheckBox
+        android:id="@+id/checkBoxRain"
+        android:layout_width="135dp"
+        android:layout_height="30dp"
+        android:text="@string/set_rain"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/checkBoxWind"
+        android:layout_width="135dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:text="@string/set_wind"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkBoxRain" />
+
+    <CheckBox
+        android:id="@+id/checkBoxFog"
+        android:layout_width="135dp"
+        android:layout_height="30dp"
+        android:text="@string/set_fog"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkBoxWind" />
+
+    <Switch
+        android:id="@+id/switch_sun_cloud"
+        android:layout_width="165dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="1dp"
+        android:gravity="center_horizontal"
+        android:text="@string/set_switch"
+        app:layout_constraintBottom_toTopOf="@id/editText"
+        app:layout_constraintStart_toEndOf="@id/checkBoxRain"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

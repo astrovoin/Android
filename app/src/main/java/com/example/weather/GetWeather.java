@@ -1,11 +1,16 @@
 package com.example.weather;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.widget.TextView;
 
 import java.util.Random;
 
-import static java.lang.String.valueOf;
+import static android.content.res.Configuration.ORIENTATION_LANDSCAPE;
+import static com.example.weather.CoatOfArmsFragment.PARCEL;
+
 
 public class GetWeather extends BaseActivity {
     private int gradus;
@@ -24,10 +29,24 @@ public class GetWeather extends BaseActivity {
     private TextView suncloud;
     private TextView degree;
 
+
+    public static Intent start(@NonNull Context context, @NonNull CityIndex parcel) {
+        Intent intent = new Intent(context, GetWeather.class);
+        intent.putExtra(PARCEL, parcel);
+
+        return intent;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (getResources().getConfiguration().orientation == ORIENTATION_LANDSCAPE) {
+
+            finish();
+            return;
+        }
         setContentView(R.layout.activity_weather);
+
         showMessage(TAG, getString(R.string.str_toast_create_get_weather));
 
         if (getIntent().getExtras() == null) {
@@ -41,7 +60,7 @@ public class GetWeather extends BaseActivity {
         str_wind = getIntent().getExtras().getString(getString(R.string.set_wind));
         str_switch = getIntent().getExtras().getString(getString(R.string.set_switch));
 
-        city = findViewById(R.id.city);
+        city = findViewById(R.id.tv_chosen_city);
         rain = findViewById(R.id.rain);
         fog = findViewById(R.id.fog);
         wind = findViewById(R.id.wind);
@@ -58,8 +77,6 @@ public class GetWeather extends BaseActivity {
         StringBuilder endview = new StringBuilder(gradus + " ");
         endview.append(getString(R.string.circle)).append(getString(R.string.str_degree));
         degree.setText(endview);
-
-
     }
 
     @Override

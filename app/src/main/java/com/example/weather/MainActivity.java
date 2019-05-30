@@ -20,7 +20,6 @@ public class MainActivity extends BaseActivity {
     private Switch switchSunCloud;
 
     private String inputText;
-
     private int countSymbol;
 
 
@@ -123,6 +122,7 @@ public class MainActivity extends BaseActivity {
     public void onBackPressed() {
         super.onBackPressed();
         showMessage(TAG, getString(R.string.str_toast_back_pressed));
-
     }
+
+
 }
