@@ -27,4 +27,6 @@
     <string name="set_rain">Дождь</string>
     <string name="set_wind">Ветер</string>
     <string name="set_fog">Туман</string>
+
+    <string name="empty_string"> </string>
 </resources>

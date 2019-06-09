@@ -55,7 +55,7 @@ public class CitiesListFragment extends ListFragment {
             cityIndexParcel = new CityIndex(defaultIndex, getResources().getTextArray(R.array.cities_list)[defaultIndex].toString());
         }
 
-        if (!isDualPane) {
+        if (isDualPane) {
             getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
             showCoatOfArms(cityIndexParcel);
         }
@@ -130,7 +130,7 @@ public class CitiesListFragment extends ListFragment {
             }
         } else {
              if (getContext() != null)
-            startActivity(GetWeather.start(getContext(), parcel));
+            startActivity(GetWeatherActivity.start(getContext(), parcel));
         }
     }
 }

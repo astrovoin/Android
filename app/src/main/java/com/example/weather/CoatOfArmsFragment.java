@@ -57,12 +57,6 @@ public class CoatOfArmsFragment extends Fragment {
             cityNameView.setText(getResources().getTextArray(R.array.cities_list)[defaultIndex].toString());
         }
 
-
-        // citySunCloud.setText(getString(R.string.set_switch_sun));
-
-        //citySunCloud.setText(getString(R.string.set_switch_cloud));
-
-
         Random rand = new Random();
         int gradus = rand.nextInt(30);
         StringBuilder endview = new StringBuilder(gradus + " ");

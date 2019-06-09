@@ -12,7 +12,7 @@ import static android.content.res.Configuration.ORIENTATION_LANDSCAPE;
 import static com.example.weather.CoatOfArmsFragment.PARCEL;
 
 
-public class GetWeather extends BaseActivity {
+public class GetWeatherActivity extends BaseActivity {
     private int gradus;
     private final String TAG = this.getClass().getSimpleName();
 
@@ -31,7 +31,7 @@ public class GetWeather extends BaseActivity {
 
 
     public static Intent start(@NonNull Context context, @NonNull CityIndex parcel) {
-        Intent intent = new Intent(context, GetWeather.class);
+        Intent intent = new Intent(context, GetWeatherActivity.class);
         intent.putExtra(PARCEL, parcel);
 
         return intent;
@@ -74,8 +74,9 @@ public class GetWeather extends BaseActivity {
         suncloud.setText(str_switch);
 
         gradus = rand.nextInt(30);
-        StringBuilder endview = new StringBuilder(gradus + " ");
-        endview.append(getString(R.string.circle)).append(getString(R.string.str_degree));
+        String gradusstr = String.valueOf(gradus);
+        StringBuilder endview = new StringBuilder(gradusstr);
+        endview.append(getString(R.string.empty_string)).append(getString(R.string.circle)).append(getString(R.string.str_degree));
         degree.setText(endview);
     }
 

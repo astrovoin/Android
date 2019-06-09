@@ -8,16 +8,29 @@
     <dimen name="width_linearLayout">300dp</dimen>
     <dimen name="height_linearLayout">120dp</dimen>
 
-    <dimen name="height_imageview_main_activity">355dp</dimen>
-    <dimen name="width_imageview_main_activity">670dp</dimen>
+    <dimen name="height_imageView_main_activity">355dp</dimen>
+    <dimen name="width_imageView_main_activity">670dp</dimen>
 
-    <dimen name="width_linearlt_weather_activity">400dp</dimen>
-    <dimen name="height_linearlt_weather_activity">180dp</dimen>
+    <dimen name="width_linearLayout_weather_activity">400dp</dimen>
+    <dimen name="height_linearLayout_weather_activity">180dp</dimen>
 
-    <dimen name="width_linlay_edit_btn_main_activity">300dp</dimen>
-    <dimen name="height_linlay_edit_btn_main_activity">110dp</dimen>
+    <dimen name="width_linearLayout_edit_btn_main_activity">300dp</dimen>
+    <dimen name="height_linearLayout_edit_btn_main_activity">110dp</dimen>
 
     <dimen name="width_frameLay_fragment_main_activity">300dp</dimen>
     <dimen name="height_frameLay_fragment_main_activity">250dp</dimen>
+
+    <dimen name="height_editText_main_activity">40dp</dimen>
+
+    <dimen name="marginTop_imageView_main_activity">372dp</dimen>
+    <dimen name="marginTop_textViewTop_main_activity">24dp</dimen>
+    <dimen name="marginTop_linearLayoutTop_main_activity">12dp</dimen>
+
+    <dimen name="width_fragment_main_activity">0dp</dimen>
+    <dimen name="height_fragment_main_activity">0dp</dimen>
+    <dimen name="marginStart_fragment_main_activity">30dp</dimen>
+    <dimen name="marginEnd_fragment_main_activity">30dp</dimen>
+    <dimen name="marginBottom_fragment_main_activity">4dp</dimen>
+
 
 </resources>

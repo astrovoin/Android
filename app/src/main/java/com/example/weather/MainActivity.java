@@ -59,7 +59,7 @@ public class MainActivity extends BaseActivity {
 
             @Override
             public void onClick(View v) {
-                Intent startNewIntentWeather = new Intent(MainActivity.this, GetWeather.class);
+                Intent startNewIntentWeather = new Intent(MainActivity.this, GetWeatherActivity.class);
                 EditText txt = findViewById(R.id.editText);
 
 
