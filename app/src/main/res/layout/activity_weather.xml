@@ -80,6 +80,21 @@
     </LinearLayout>
 
 
+    <ImageView
+        android:id="@+id/history_weather"
+        android:layout_width="@dimen/width_and_height_history_weather_main_activity"
+        android:layout_height="@dimen/width_and_height_history_weather_main_activity"
+        android:layout_marginStart="8dp"
+        android:background="@color/colorBackgroundFragment"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_chosen_city"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_chosen_city"
+        app:layout_constraintTop_toTopOf="@+id/tv_chosen_city"
+        app:srcCompat="@android:drawable/ic_menu_info_details" />
+
+
 </android.support.constraint.ConstraintLayout>
 
 

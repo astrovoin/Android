@@ -7,4 +7,23 @@
         <item>Новосибирск</item>
         <item>Иркутск</item>
     </string-array>
+
+    <string-array name="descriptions">
+        <item>Солнечно, +15</item>
+        <item>Солнечно, +30</item>
+        <item>Солнечно, +12</item>
+        <item>Солнечно, +25</item>
+        <item>Солнечно, +21</item>
+        <item>Солнечно, +10</item>
+        <item>Солнечно, +5</item>
+    </string-array>
+    <array name="pictures">
+        <item>@drawable/ic_wb_sunny_black_24dp</item>
+        <item>@drawable/ic_wb_sunny_black_24dp</item>
+        <item>@drawable/ic_wb_sunny_black_24dp</item>
+        <item>@drawable/ic_wb_sunny_black_24dp</item>
+        <item>@drawable/ic_wb_sunny_black_24dp</item>
+        <item>@drawable/ic_wb_sunny_black_24dp</item>
+        <item>@drawable/ic_wb_sunny_black_24dp</item>
+        </array>
 </resources>

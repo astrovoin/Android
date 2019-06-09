@@ -1,9 +1,7 @@
 package com.example.weather;
 
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -16,6 +14,7 @@ public class MainActivity extends BaseActivity {
     private final String TAG = this.getClass().getSimpleName();
 
     private Button btnGetWeather;
+
     private CheckBox isRain;
     private CheckBox isFog;
     private CheckBox isWind;
@@ -32,7 +31,6 @@ public class MainActivity extends BaseActivity {
         showMessage(TAG, getString(R.string.str_toast_create));
 
         btnGetWeather = findViewById(R.id.btn_get_weather);
-        View cliclTextView = findViewById(R.id.textView_set_the_weather);
         isRain = findViewById(R.id.checkBoxRain);
         isFog = findViewById(R.id.checkBoxFog);
         isWind = findViewById(R.id.checkBoxWind);
@@ -87,6 +85,8 @@ public class MainActivity extends BaseActivity {
                 } else showToast(getString(R.string.str_message_not_null));
             }
         });
+
+
 
     }
 

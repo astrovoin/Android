@@ -11,7 +11,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/marginTop_textViewTop_main_activity"
-        android:clickable="true"
         android:gravity="center"
         android:text="@string/str_name"
         app:layout_constraintBottom_toTopOf="@id/linearLayout"
@@ -109,6 +108,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/linLay_edit_and_btn"
         app:layout_constraintVertical_bias="0.0" />
+
 
 
 </android.support.constraint.ConstraintLayout>

@@ -32,4 +32,6 @@
     <string name="set_fog">Туман</string>
 
     <string name="empty_string">&#160;</string>
+
+    <string name="position">Позиция - </string>
 </resources>

@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -34,6 +36,8 @@ public class GetWeatherActivity extends BaseActivity {
     private TextView sunCloud;
     private TextView degree;
     private TextView pressure;
+
+    private ImageView btnHistoryWeather;
 
     public static Intent start(@NonNull Context context, @NonNull CityIndex parcel) {
         Intent intent = new Intent(context, GetWeatherActivity.class);
@@ -68,6 +72,7 @@ public class GetWeatherActivity extends BaseActivity {
         strWind = getIntent().getExtras().getString(getString(R.string.set_wind));
         str_switchFromEdTx = getIntent().getExtras().getString(getString(R.string.set_switch));
         str_switch = getIntent().getExtras().getString(CONDITION);
+        btnHistoryWeather = findViewById(R.id.history_weather);
 
         city = findViewById(R.id.tv_chosen_city);
         rain = findViewById(R.id.rain);
@@ -99,7 +104,13 @@ public class GetWeatherActivity extends BaseActivity {
         strPressureFull.append(getString(R.string.empty_string)).append(getString(R.string.str_mm_of_mercury));
         pressure.setText(strPressureFull);
 
-
+        btnHistoryWeather.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent startNewIntentHistoryWeather = new Intent(GetWeatherActivity.this, HistoryWeatherActivity.class);
+                startActivity(startNewIntentHistoryWeather);
+            }
+        });
     }
 
     @Override

@@ -34,5 +34,15 @@
     <dimen name="marginEnd_fragment_main_activity">30dp</dimen>
     <dimen name="marginBottom_fragment_main_activity">4dp</dimen>
 
+    <dimen name="width_and_height_history_weather_main_activity">40dp</dimen>
+
+
+    <dimen name="card_margin">5dp</dimen>
+    <dimen name="card_album_radius">15dp</dimen>
+    <dimen name="album_cover_height">100dp</dimen>
+    <dimen name="elevation">3dp</dimen>
+
+    <dimen name="textSize_item_layout">42sp</dimen>
+
 
 </resources>
