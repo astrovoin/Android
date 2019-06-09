@@ -2,6 +2,8 @@
 <resources>
     <dimen name="text_size">20sp</dimen>
     <dimen name="text_size_weather">50sp</dimen>
+    <dimen name="text_size_pressure">25sp</dimen>
+
     <dimen name="height_checkbox">40dp</dimen>
     <dimen name="height_checkbox_weather_activity">60dp</dimen>
     <dimen name="width_linearLayoutCheckBox">130dp</dimen>
@@ -26,8 +28,8 @@
     <dimen name="marginTop_textViewTop_main_activity">24dp</dimen>
     <dimen name="marginTop_linearLayoutTop_main_activity">12dp</dimen>
 
-    <dimen name="width_fragment_main_activity">0dp</dimen>
-    <dimen name="height_fragment_main_activity">0dp</dimen>
+    <dimen name="width_fragment_main_activity">324dp</dimen>
+    <dimen name="height_fragment_main_activity">100dp</dimen>
     <dimen name="marginStart_fragment_main_activity">30dp</dimen>
     <dimen name="marginEnd_fragment_main_activity">30dp</dimen>
     <dimen name="marginBottom_fragment_main_activity">4dp</dimen>

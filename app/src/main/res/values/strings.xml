@@ -6,6 +6,8 @@
     <string name="str_btm_weather">Get Weather Now</string>
     <string name="str_btm_generate_weather">Generate weather</string>
     <string name="str_message_not_null">Input city!</string>
+    <string name="str_mm_of_mercury">mm.Hg</string>
+    <string name="str_pressure">720</string>
 
     <string name="str_toast_create">onCreate()</string>
     <string name="str_toast_create_get_weather">onCreate()</string>
@@ -28,6 +30,8 @@
     <string name="set_fog">Fog</string>
 
     <string name="empty_string"> </string>
+
+
 
 
 

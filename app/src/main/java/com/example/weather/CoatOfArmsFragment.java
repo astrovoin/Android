@@ -15,6 +15,8 @@ import java.util.Random;
 
 public class CoatOfArmsFragment extends Fragment {
     public static final String PARCEL = "parcel";
+    public static final String CITY = "city";
+    public static final String CONDITION = "condition";
     private final String TAG = this.getClass().getSimpleName();
 
     private TextView cityDegree;
@@ -50,8 +52,10 @@ public class CoatOfArmsFragment extends Fragment {
         citySunCloud = getView().findViewById(R.id.sun_cloud);
 
         CityIndex parcel = getParcel();
+
         if (parcel != null) {
             cityNameView.setText(parcel.getCityName());
+            citySunCloud.setText(parcel.getCondition());
         } else {
 
             cityNameView.setText(getResources().getTextArray(R.array.cities_list)[defaultIndex].toString());
@@ -59,8 +63,9 @@ public class CoatOfArmsFragment extends Fragment {
 
         Random rand = new Random();
         int gradus = rand.nextInt(30);
-        StringBuilder endview = new StringBuilder(gradus + " ");
-        endview.append(getString(R.string.circle)).append(getString(R.string.str_degree));
+        String gradusStr = String.valueOf(gradus);
+        StringBuilder endview = new StringBuilder(gradusStr);
+        endview.append(getString(R.string.empty_string)).append(getString(R.string.circle)).append(getString(R.string.str_degree));
         cityDegree.setText(endview);
 
 
@@ -74,6 +79,7 @@ public class CoatOfArmsFragment extends Fragment {
         }
         return parcel;
     }
+
 
     @Override
     public void onDestroy() {

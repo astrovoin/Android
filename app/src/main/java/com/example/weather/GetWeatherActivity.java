@@ -9,30 +9,37 @@ import android.widget.TextView;
 import java.util.Random;
 
 import static android.content.res.Configuration.ORIENTATION_LANDSCAPE;
+import static com.example.weather.CoatOfArmsFragment.CITY;
+import static com.example.weather.CoatOfArmsFragment.CONDITION;
 import static com.example.weather.CoatOfArmsFragment.PARCEL;
 
 
 public class GetWeatherActivity extends BaseActivity {
-    private int gradus;
     private final String TAG = this.getClass().getSimpleName();
 
+    private int gradus;
+
     private String text;
-    private String str_rain;
-    private String str_fog;
-    private String str_wind;
+    private String textFromEdTx;
+    private String strRain;
+    private String strFog;
+    private String strWind;
+    private String str_switchFromEdTx;
     private String str_switch;
 
     private TextView city;
     private TextView rain;
     private TextView fog;
     private TextView wind;
-    private TextView suncloud;
+    private TextView sunCloud;
     private TextView degree;
-
+    private TextView pressure;
 
     public static Intent start(@NonNull Context context, @NonNull CityIndex parcel) {
         Intent intent = new Intent(context, GetWeatherActivity.class);
         intent.putExtra(PARCEL, parcel);
+        intent.putExtra(CITY, parcel.getCityName());
+        intent.putExtra(CONDITION, parcel.getCondition());
 
         return intent;
     }
@@ -53,31 +60,46 @@ public class GetWeatherActivity extends BaseActivity {
             return;
         }
 
-        Random rand = new Random();
-        text = getIntent().getExtras().getString(getString(R.string.str_message_not_null));
-        str_rain = getIntent().getExtras().getString(getString(R.string.set_rain));
-        str_fog = getIntent().getExtras().getString(getString(R.string.set_fog));
-        str_wind = getIntent().getExtras().getString(getString(R.string.set_wind));
-        str_switch = getIntent().getExtras().getString(getString(R.string.set_switch));
+        Random randTemp = new Random();
+        text = getIntent().getExtras().getString(CITY);
+        textFromEdTx = getIntent().getExtras().getString(getString(R.string.str_message_not_null));
+        strRain = getIntent().getExtras().getString(getString(R.string.set_rain));
+        strFog = getIntent().getExtras().getString(getString(R.string.set_fog));
+        strWind = getIntent().getExtras().getString(getString(R.string.set_wind));
+        str_switchFromEdTx = getIntent().getExtras().getString(getString(R.string.set_switch));
+        str_switch = getIntent().getExtras().getString(CONDITION);
 
         city = findViewById(R.id.tv_chosen_city);
         rain = findViewById(R.id.rain);
         fog = findViewById(R.id.fog);
         wind = findViewById(R.id.wind);
-        suncloud = findViewById(R.id.sun_cloud);
+        sunCloud = findViewById(R.id.sun_cloud);
         degree = findViewById(R.id.weatherView);
+        pressure = findViewById(R.id.weatherViewPressure);
 
-        city.setText(text);
-        rain.setText(str_rain);
-        fog.setText(str_fog);
-        wind.setText(str_wind);
-        suncloud.setText(str_switch);
+        if (text == null) {
+            city.setText(textFromEdTx);
+        } else city.setText(text);
 
-        gradus = rand.nextInt(30);
-        String gradusstr = String.valueOf(gradus);
-        StringBuilder endview = new StringBuilder(gradusstr);
-        endview.append(getString(R.string.empty_string)).append(getString(R.string.circle)).append(getString(R.string.str_degree));
-        degree.setText(endview);
+        rain.setText(strRain);
+        fog.setText(strFog);
+        wind.setText(strWind);
+        if (str_switch == null) {
+            sunCloud.setText(str_switchFromEdTx);
+        } else sunCloud.setText(str_switch);
+
+        gradus = randTemp.nextInt(30);
+        String strGradus = String.valueOf(gradus);
+        StringBuilder endView = new StringBuilder(strGradus);
+        endView.append(getString(R.string.empty_string)).append(getString(R.string.circle)).append(getString(R.string.str_degree));
+        degree.setText(endView);
+
+        String strPressure = getString(R.string.str_pressure);
+        StringBuilder strPressureFull = new StringBuilder(strPressure);
+        strPressureFull.append(getString(R.string.empty_string)).append(getString(R.string.str_mm_of_mercury));
+        pressure.setText(strPressureFull);
+
+
     }
 
     @Override

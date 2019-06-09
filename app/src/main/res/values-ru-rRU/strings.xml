@@ -7,6 +7,8 @@
     <string name="str_btm_weather">Получить прогноз</string>
     <string name="str_btm_generate_weather">Генерация погоды</string>
     <string name="str_message_not_null">Введите город!</string>
+    <string name="str_mm_of_mercury">мм рт.ст.</string>
+    <string name="str_pressure">720</string>
 
     <string name="str_toast_create">onCreate()</string>
     <string name="str_toast_create_get_weather">onCreate()</string>
@@ -21,6 +23,7 @@
 
     <string name="circle">&#176;</string>
 
+
     <string name="set_switch">Солнечно / Облачно</string>
     <string name="set_switch_sun">Солнечно</string>
     <string name="set_switch_cloud">Облачно</string>
@@ -28,5 +31,5 @@
     <string name="set_wind">Ветер</string>
     <string name="set_fog">Туман</string>
 
-    <string name="empty_string"> </string>
+    <string name="empty_string">&#160;</string>
 </resources>

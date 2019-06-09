@@ -11,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/marginTop_textViewTop_main_activity"
+        android:clickable="true"
         android:gravity="center"
         android:text="@string/str_name"
         app:layout_constraintBottom_toTopOf="@id/linearLayout"
@@ -64,8 +65,8 @@
         android:id="@+id/linLay_edit_and_btn"
         android:layout_width="@dimen/width_linearLayout_edit_btn_main_activity"
         android:layout_height="@dimen/height_linearLayout_edit_btn_main_activity"
-        android:orientation="vertical"
         android:gravity="center_horizontal"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/linearLayout">
@@ -102,13 +103,12 @@
         android:layout_height="@dimen/height_fragment_main_activity"
         android:layout_marginStart="@dimen/marginStart_fragment_main_activity"
         android:layout_marginEnd="@dimen/marginEnd_fragment_main_activity"
-        android:layout_marginBottom="@dimen/marginBottom_fragment_main_activity"
         android:layout_weight="1"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linLay_edit_and_btn" />
+        app:layout_constraintTop_toBottomOf="@id/linLay_edit_and_btn"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </android.support.constraint.ConstraintLayout>

@@ -25,6 +25,15 @@ public class CitiesListFragment extends ListFragment {
 
     private int defaultIndex = 0;
 
+    public static CitiesListFragment newInstance(int someInt, String someString) {
+        CitiesListFragment catFragment = new CitiesListFragment();
+        Bundle args = new Bundle();
+        args.putInt("someInt", someInt);
+        args.putString("SomeString", someString);
+        catFragment.setArguments(args);
+        return catFragment;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Log.i(TAG, "OnCreateView()");
@@ -52,7 +61,7 @@ public class CitiesListFragment extends ListFragment {
         if (savedInstanceState != null) {
             cityIndexParcel = (CityIndex) savedInstanceState.getSerializable(CURRENT_CITY_INDEX);
         } else {
-            cityIndexParcel = new CityIndex(defaultIndex, getResources().getTextArray(R.array.cities_list)[defaultIndex].toString());
+            cityIndexParcel = new CityIndex(defaultIndex, getResources().getTextArray(R.array.cities_list)[defaultIndex].toString(), getString(R.string.set_switch_sun));
         }
 
         if (isDualPane) {
@@ -66,14 +75,15 @@ public class CitiesListFragment extends ListFragment {
         Log.i(TAG, "onSaveInstanceState()");
         super.onSaveInstanceState(outState);
         outState.putSerializable(CURRENT_CITY_INDEX, cityIndexParcel);
-        ;
+
     }
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         Log.i(TAG, "onListItemClick()");
         TextView cityNameView = (TextView) v;
-        cityIndexParcel = new CityIndex(position, cityNameView.getText().toString());
+        String condition = getString(R.string.set_switch_sun);
+        cityIndexParcel = new CityIndex(position, cityNameView.getText().toString(), condition);
         showCoatOfArms(cityIndexParcel);
     }
 
@@ -129,8 +139,9 @@ public class CitiesListFragment extends ListFragment {
                         .commit();
             }
         } else {
-             if (getContext() != null)
-            startActivity(GetWeatherActivity.start(getContext(), parcel));
+            if (getContext() != null)
+                startActivity(GetWeatherActivity.start(getContext(), parcel));
         }
     }
+
 }
