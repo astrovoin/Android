@@ -2,7 +2,9 @@
 <resources>
     <string name="app_name">Погода</string>
 
-    <string name="str_name">Установи погоду!</string>
+    <string name="str_name">Узнай погоду!</string>
+
+    <string name="menu">На главную</string>
 
     <string name="str_btm_weather">Получить прогноз</string>
     <string name="str_btm_generate_weather">Генерация погоды</string>
@@ -34,4 +36,8 @@
     <string name="empty_string">&#160;</string>
 
     <string name="position">Позиция - </string>
+
+    <string name="card_city1">Иркутск</string>
+    <string name="card_city2">Москва</string>
+    <string name="card_city3">Новосибирск</string>
 </resources>

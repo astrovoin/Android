@@ -49,7 +49,7 @@ public class CitiesListFragment extends ListFragment {
             return;
         }
 
-        ArrayAdapter adapter = ArrayAdapter.createFromResource(
+      /*  ArrayAdapter adapter = ArrayAdapter.createFromResource(
                 activityContext,
                 R.array.cities_list,
                 android.R.layout.simple_list_item_activated_1);
@@ -68,6 +68,7 @@ public class CitiesListFragment extends ListFragment {
             getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
             showCoatOfArms(cityIndexParcel);
         }
+        */
     }
 
     @Override
@@ -84,7 +85,7 @@ public class CitiesListFragment extends ListFragment {
         TextView cityNameView = (TextView) v;
         String condition = getString(R.string.set_switch_sun);
         cityIndexParcel = new CityIndex(position, cityNameView.getText().toString(), condition);
-        showCoatOfArms(cityIndexParcel);
+        // showCoatOfArms(cityIndexParcel);
     }
 
     @Override

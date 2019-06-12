@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">WeatherApp</string>
 
-    <string name="str_name">Set the Weather!</string>
+    <string name="str_name">Find out the weather!</string>
+
+    <string name="menu">On the Main</string>
 
     <string name="str_btm_weather">Get Weather Now</string>
     <string name="str_btm_generate_weather">Generate weather</string>
@@ -22,7 +24,6 @@
 
     <string name="circle">&#176;</string>
 
-
     <string name="set_switch">Sun / Cloud</string>
     <string name="set_switch_sun">Sun</string>
     <string name="set_switch_cloud">Cloud</string>
@@ -33,6 +34,10 @@
 
     <string name="empty_string">&#160;</string>
     <string name="position">Position - </string>
+
+    <string name="card_city1">Irkutsk</string>
+    <string name="card_city2">Moscow</string>
+    <string name="card_city3">Novosibirsk</string>
 
 
 

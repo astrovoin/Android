@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
 
     <TextView
         android:id="@+id/textView_set_the_weather"
@@ -13,52 +15,13 @@
         android:layout_marginTop="@dimen/marginTop_textViewTop_main_activity"
         android:gravity="center"
         android:text="@string/str_name"
-        app:layout_constraintBottom_toTopOf="@id/linearLayout"
+
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.100000024" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="@dimen/width_linearLayout"
-        android:layout_height="@dimen/height_linearLayout"
-        android:layout_marginTop="@dimen/marginTop_linearLayoutTop_main_activity"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView_set_the_weather">
-
-        <LinearLayout
-            android:layout_width="@dimen/width_linearLayoutCheckBox"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <CheckBox
-                android:id="@+id/checkBoxRain"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/height_checkbox"
-                android:text="@string/set_rain" />
-
-            <CheckBox
-                android:id="@+id/checkBoxFog"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/height_checkbox"
-                android:text="@string/set_fog" />
-
-            <CheckBox
-                android:id="@+id/checkBoxWind"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/height_checkbox"
-                android:text="@string/set_wind" />
-
-        </LinearLayout>
-
-        <Switch
-            android:id="@+id/switch_sun_cloud"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/set_switch" />
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linLay_edit_and_btn"
@@ -66,9 +29,11 @@
         android:layout_height="@dimen/height_linearLayout_edit_btn_main_activity"
         android:gravity="center_horizontal"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linearLayout">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.29000002">
 
         <EditText
             android:id="@+id/editText"
@@ -95,20 +60,87 @@
         app:layout_constraintTop_toTopOf="@id/textView_set_the_weather"
         app:srcCompat="@drawable/river" />
 
-    <fragment
-        android:id="@+id/choose_city"
-        android:name="com.example.weather.CitiesListFragment"
-        android:layout_width="@dimen/width_fragment_main_activity"
-        android:layout_height="@dimen/height_fragment_main_activity"
-        android:layout_marginStart="@dimen/marginStart_fragment_main_activity"
-        android:layout_marginEnd="@dimen/marginEnd_fragment_main_activity"
-        android:layout_weight="1"
+    <android.support.v7.widget.CardView
+        android:id="@+id/city1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_CardView"
+        android:layout_margin="@dimen/margin_CardView"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="@id/city2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/linLay_edit_and_btn"
+        app:layout_constraintVertical_bias="0.62"
+        card_view:cardCornerRadius="@dimen/CornerRadius_CardView"
+        card_view:cardElevation="@dimen/Elevation_CardView">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/padding_TextView_card"
+            android:text="@string/card_city1" />
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/city2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_CardView"
+        android:layout_margin="@dimen/margin_CardView"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="@id/city3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/city1"
+
+        card_view:cardCornerRadius="@dimen/CornerRadius_CardView"
+        card_view:cardElevation="@dimen/Elevation_CardView">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/padding_TextView_card"
+            android:text="@string/card_city2" />
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/city3"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_CardView"
+        android:layout_margin="@dimen/margin_CardView"
+        android:clickable="true"
+        android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linLay_edit_and_btn"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@id/city2"
+        card_view:cardCornerRadius="@dimen/CornerRadius_CardView"
+        card_view:cardElevation="@dimen/Elevation_CardView">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/padding_TextView_card"
+            android:text="@string/card_city3" />
 
+    </android.support.v7.widget.CardView>
+
+    <!-- <fragment
+         android:id="@+id/choose_city"
+         android:name="com.example.weather.CitiesListFragment"
+         android:layout_width="@dimen/width_fragment_main_activity"
+         android:layout_height="@dimen/height_fragment_main_activity"
+         android:layout_marginStart="@dimen/marginStart_fragment_main_activity"
+         android:layout_marginEnd="@dimen/marginEnd_fragment_main_activity"
+         android:layout_weight="1"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@id/linLay_edit_and_btn"
+         app:layout_constraintVertical_bias="0.0" />
+ -->
 
 </android.support.constraint.ConstraintLayout>

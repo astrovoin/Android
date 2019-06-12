@@ -29,7 +29,7 @@
     <dimen name="marginTop_linearLayoutTop_main_activity">12dp</dimen>
 
     <dimen name="width_fragment_main_activity">324dp</dimen>
-    <dimen name="height_fragment_main_activity">100dp</dimen>
+    <dimen name="height_fragment_main_activity">200dp</dimen>
     <dimen name="marginStart_fragment_main_activity">30dp</dimen>
     <dimen name="marginEnd_fragment_main_activity">30dp</dimen>
     <dimen name="marginBottom_fragment_main_activity">4dp</dimen>
@@ -44,5 +44,11 @@
 
     <dimen name="textSize_item_layout">42sp</dimen>
 
+    <dimen name="padding_TextView_card">10dp</dimen>
+
+    <dimen name="height_CardView">65dp</dimen>
+    <dimen name="margin_CardView">10dp</dimen>
+    <dimen name="CornerRadius_CardView">15dp</dimen>
+    <dimen name="Elevation_CardView">10dp</dimen>
 
 </resources>
